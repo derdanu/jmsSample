@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="new server">
+
+   <!-- Enable features -->
+   <featureManager>
+            <feature>servlet-3.0</feature>      
+            <feature>jsp-2.2</feature>      
+            <feature>jndi-1.0</feature>
+   </featureManager>
+
+    
+   <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
+   <httpEndpoint id="defaultHttpEndpoint"
+   	host="${default.host}"
+	httpPort="${default.http.port}"
+	httpsPort="${default.https.port}" />
+
+    <application context-root="/" type="war" id="root"
+    	location="ROOT.war" name="root"/>
+
+    <library id="jndiConfig">
+	<folder dir="${env.OPENSHIFT_AMQCLIENT_DIR}/conf" />
+    </library>
+
+    <application id="jmsSample" name="jmsSample" type="war" location="jmsSample.war" context-root="jms">
+	<classloader privateLibraryRef="jndiConfig" />
+    </application> 
+
+</server>
