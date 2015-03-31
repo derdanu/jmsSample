@@ -8,6 +8,6 @@
 </head>
 <body>
 <h2>JMS Sample</h2>
-Simple JMS Sample. Use with <b>./simpleJms</b>
+Simple JMS Sample. Use with <b><a href="simpleJms">./simpleJms</a></b>
 </body>
 </html>
