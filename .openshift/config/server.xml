@@ -15,14 +15,11 @@
 	httpPort="${default.http.port}"
 	httpsPort="${default.https.port}" />
 
-    <application context-root="/" type="war" id="root"
-    	location="ROOT.war" name="root"/>
-
     <library id="jndiConfig">
 	<folder dir="${env.OPENSHIFT_AMQCLIENT_CONFIGDIR}" />
     </library>
 
-    <application id="jmsSample" name="jmsSample" type="war" location="jmsSample.war" context-root="jms">
+    <application id="jmsSample" name="jmsSample" type="war" location="jmsSample.war" context-root="/">
 	<classloader privateLibraryRef="jndiConfig" />
     </application> 
 
