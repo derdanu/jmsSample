@@ -19,7 +19,7 @@
     	location="ROOT.war" name="root"/>
 
     <library id="jndiConfig">
-	<folder dir="${env.OPENSHIFT_AMQCLIENT_DIR}/conf" />
+	<folder dir="${env.OPENSHIFT_AMQCLIENT_CONFIGDIR}" />
     </library>
 
     <application id="jmsSample" name="jmsSample" type="war" location="jmsSample.war" context-root="jms">
